@@ -97,7 +97,7 @@ cargo build --release
 
 ```mermaid
 graph TD
-    subgraph GUI (Electron)
+    subgraph GUI Electron
         A[Desktop] -- IPC/Socket --> B[Client‑FTP-Test]
         A -- IPC/Socket --> C[Client‑SFTP‑CS]
         A -- IPC/Socket --> D[Client‑SFTP]

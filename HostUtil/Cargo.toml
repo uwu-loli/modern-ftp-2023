@@ -1,0 +1,10 @@
+[package]
+name = "hostutil"
+version = "0.1.0"
+edition = "2021"
+description = "Program with utilities for host like cpu, mem, disk stats and etc.."
+license = "MIT"
+#build = "build.rs" / later / https://doc.rust-lang.org/cargo/reference/build-scripts.html
+
+[dependencies]
+sysinfo = "0.29.6"

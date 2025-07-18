@@ -1,0 +1,3 @@
+dotnet publish --configuration Release -r win-x64
+dotnet publish --configuration Release -r linux-x64
+dotnet publish --configuration Release -r osx-x64

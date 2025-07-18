@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../fonts/NeonOL/style.css">
+    <link rel="stylesheet" href="../../fonts/Nunito/style.css">
+    
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/file.exist.css">
+</head>
+<body ondragstart="return false;">
+    <div class="header">
+        <i style="background:#ff3737" onclick="ipcRenderer.send('closeKidWindow')"></i>
+        <span>Modern File Transfer</span>
+    </div>
+    <div class="content">
+        <div class="head">
+            <img src="../../icons/default.png" onerror="this.src = '../../icons/default.png'" height="75px">
+            <div class="cont">
+                <h2 class="host">???????</h2>
+                <h2 translate="title">File already exist</h2>
+            </div>
+        </div>
+        <div class="fileInfo from">
+            <h3>???.file</h3>
+            <span>C:\</span>
+        </div>
+        <img src="../icons/arrow-bottom.svg" height="25px">
+        <div class="fileInfo to">
+            <h3>???.file</h3>
+            <span>/</span>
+        </div>
+        <div class="buttons">
+            <button translate="cancel" class="cancel" onclick="ipcRenderer.send('closeKidWindow')">Cancel</button>
+            <button translate="replace" class="replace" onclick="if(clientId != '' ) {ipcRenderer.send('file.exist.upload', clientId, from, to, fileName, isUpload);}">Replace</button>
+        </div>
+    </div>
+    <script>
+        let from = '', to = '', fileName = '', clientId = '', isUpload = true;
+        ipcRenderer.once('file.exist.info', (_, client, host, _isUpload, _from, _to, _fileName, isDir) => {
+            from = _from; to = _to; fileName = _fileName; clientId = client; isUpload = _isUpload;
+            
+            document.querySelector('.content .host').innerHTML = host;
+
+            document.querySelector('.content .fileInfo.from h3').innerHTML = fileName;
+            document.querySelector('.content .fileInfo.from span').innerHTML = _from;
+            
+            document.querySelector('.content .fileInfo.to h3').innerHTML = fileName;
+            document.querySelector('.content .fileInfo.to span').innerHTML = _to;
+
+            const _type = fileName.split('.').slice(-1).join('.');
+            const reqUid = 'kid-req-img';
+            ipcRenderer.once('session.get.file.icon.static.' + reqUid, (_, icon) => {
+                if(!icon) return;
+                document.querySelector('.content .head img').src = icon;
+            });
+            ipcRenderer.send('session.get.file.icon.static', reqUid, (isDir ? 'folder' : _type), true);
+        });
+
+        window.addEventListener('load', () => {
+            const translations = getTranslations();
+            if(!translations) return;
+
+            const modals = translations['modals'];
+            if(!modals) return;
+
+            const crt = modals['exist'];
+            if(!crt) return;
+
+            const elements = document.querySelectorAll('.content [translate]');
+            for (let i = 0; i < elements.length; i++) {
+                const element = elements[i];
+                const type = element.getAttribute('translate');
+                const current = crt[type];
+                if(current && element.innerHTML != current){
+                    element.innerHTML = current;
+                }
+            }
+        });
+    </script>
+</body>

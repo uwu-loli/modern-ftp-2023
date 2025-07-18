@@ -1,0 +1,10 @@
+@font-face{
+    font-family: 'NeonOL';
+    src: url('./NeonOL.eot');
+    src: url('./NeonOL.eot?#iefix') format('embedded-opentype'),
+         url('./NeonOL.woff') format('woff'),
+         url('./NeonOL.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}

@@ -1,0 +1,12 @@
+.content .status{
+    height: calc(calc(100vh - 70px) / 2);
+    width: 100%;
+    display: grid;
+    grid-template-columns: calc(100% - 126px) 125px;
+}
+.content .status .info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-height: calc(calc(100vh - 70px) / 2);
+}

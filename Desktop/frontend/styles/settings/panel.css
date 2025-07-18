@@ -1,0 +1,46 @@
+@keyframes settingsPanelShow {
+    from {transform: translateX(100%);}
+    to {transform:translateX(0%)}
+}
+@keyframes settingsPanelHide {
+    from {transform:translateX(0%)}
+    to {transform: translateX(100%);}
+}
+panel.settings{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: absolute;
+    right: 0;
+    width: calc(100vw - max(20vw, 200px));
+    border-left: 1px solid black;
+    -webkit-app-region: no-drag;
+    animation: settingsPanelShow .7s;
+}
+panel.settings .area{
+    padding: 25px;
+    color: aliceblue;
+}
+panel.settings .area .title{
+    user-select: none;
+    height: 43px;
+    margin: 25px 0;
+}
+panel.settings .area .title .back{
+    cursor: pointer;
+    font-family: 'MFTIcons', 'Nunito', sans-serif;
+    font-size: 65%;
+    padding: 5px;
+    border-radius: 50%;
+}
+panel.settings .area .postarea {
+    margin: 25px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 168px);
+}
+panel.settings .area type{
+    font-size: 22px;
+    font-weight: 600;
+}

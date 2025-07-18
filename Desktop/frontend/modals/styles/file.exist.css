@@ -1,0 +1,63 @@
+.content{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.content .head{
+    display: flex;
+}
+.content .head .cont{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.content .head .cont *{
+    margin: 0;
+}
+.content .fileInfo{
+    margin: 10px 20px;
+    max-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.content .fileInfo *{
+    margin: 0;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.content .buttons{
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content .buttons button{
+    cursor: pointer;
+    border-radius: 10px;
+    outline: 0;
+    border: 0;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 7px 5px;
+    margin: 0 5px;
+    width: 120px;
+}
+.content .buttons button.cancel{
+    background-color: #37a5ff;
+    border: 1px solid #37a5ff;
+}
+.content .buttons button.cancel:hover{
+    background-color: #3190df;
+    border: 1px solid #df00fc;
+}
+.content .buttons button.replace{
+    background-color: #37ff73;
+    border: 1px solid #37ff73;
+}
+.content .buttons button.replace:hover{
+    background-color: #2ed460;
+    border: 1px solid #df00fc;
+}

@@ -1,0 +1,10 @@
+@font-face{
+    font-family: 'MFTIcons';
+    src: url('./MFTIcons.eot');
+    src: url('./MFTIcons.eot?#iefix') format('embedded-opentype'),
+         url('./MFTIcons.woff') format('woff'),
+         url('./MFTIcons.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}

@@ -1,0 +1,15 @@
+x86_64-unknown-linux-gnu:
+- Alma Linux [8]
+- Astra Linux [CE]
+- CentOS [8 Stream]
+- Rocky Linux [9]
+- Ubuntu [18.04-22.04]
+- Debian [9-12]
+
+x86_64-unknown-freebsd
+- FreeBSD
+
+x86_64-pc-windows-msvc
+- Windows Server 2012
+- Windows 10
+- Windows 11

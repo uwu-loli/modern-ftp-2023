@@ -1,0 +1,69 @@
+.content .status .info .downloads{
+    border-bottom: 1px solid black;
+    height: calc(67% - 1px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content .status .info .downloads .tasks{
+    overflow-y: auto;
+    height: 100%;
+}
+.content .status .info .downloads .head,
+.content .status .info .downloads .task{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    height: 30px;
+    align-items: center;
+}
+.content .status .info .downloads .head{
+    border-bottom: 1px solid black;
+}
+.content .status .info .downloads .head span{
+    padding: 0 5px;
+    color: #5b5d63;
+    font-weight: 600;
+    user-select: none;
+}
+
+.content .status .info .downloads el::-webkit-scrollbar{
+    height: 2px;
+}
+.content .status .info .downloads el{
+    padding: 0 5px;
+    color: #c7c7cc;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow-x: auto;
+    user-select: none;
+}
+.content .status .info .downloads .task .name b{
+    cursor: pointer;
+    margin: 0 5px;
+    font-weight: 800;
+    font-family: 'MFTIcons', 'Nunito', sans-serif;
+    font-size: 11px;
+}
+.content .status .info .downloads .task .progress{
+    width: 80%;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #20232b;
+}
+.content .status .info .downloads .task .progress div{
+    border-radius: 20px;
+    margin: 0;
+    background: #69bde0;
+    border: none;
+    height: 100%;
+    width: 0%;
+}
+.content .status .info .downloads .task .progress.active div{
+    background: #69bde0;
+}
+.content .status .info .downloads .task .progress.uploaded div{
+    background: #64e8a6;
+}
+.content .status .info .downloads .task .progress.cancelled div{
+    background: #6c6c7f;
+}

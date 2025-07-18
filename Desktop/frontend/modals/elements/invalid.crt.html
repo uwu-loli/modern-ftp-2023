@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../fonts/NeonOL/style.css">
+    <link rel="stylesheet" href="../../fonts/Nunito/style.css">
+    
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/invalid.crt.css">
+</head>
+<body ondragstart="return false;">
+    <div class="header">
+        <i style="background:#ff3737" onclick="ipcRenderer.send('closeKidWindow')"></i>
+        <span>Modern File Transfer</span>
+    </div>
+    <div class="content">
+        <img src="../icons/warning.svg" height="75px">
+        <span class="host">???????</span>
+        <span translate="title">Host certificate has been changed</span>
+        <span style="margin-top: 3px;" translate="text1">Either the OS has been reinstalled</span>
+        <span style="margin-bottom: 3px;" translate="text2">or your traffic is being intercepted</span>
+        <span style="margin-top: 3px;"><trs translate="text3">Key type:</trs> <span class="key_type">Unknow</span></span>
+        <span translate="text4">Sha1 hash of the host's public key</span>
+        <span style="margin: 0 25px 3px 25px; color: #9c9c9c" class="key_hash"></span>
+        <div class="buttons">
+            <button translate="cancel" class="cancel" onclick="ipcRenderer.send('closeKidWindow')">Cancel</button>
+            <button translate="continue" class="continue" onclick="if(hash != '' ) {ipcRenderer.send('delete.crt', hash, client);}">Continue</button>
+        </div>
+    </div>
+    <script>
+        let hash = '';
+        let client = '';
+        ipcRenderer.once('crt.info', (_, _client, user, host, _hash, key_type, key_hash) => {
+            client = _client;
+            hash = _hash;
+            const el = document.querySelector('.content .host');
+            el.innerHTML = '';
+            el.innerHTML += user;
+            el.innerHTML += '@';
+            el.innerHTML += host;
+
+            document.querySelector('.key_type').innerHTML = key_type;
+            document.querySelector('.key_hash').innerHTML = key_hash;
+        });
+        window.addEventListener('load', () => {
+            const translations = getTranslations();
+            if(!translations) return;
+
+            const modals = translations['modals'];
+            if(!modals) return;
+
+            const crt = modals['crt'];
+            if(!crt) return;
+
+            const elements = document.querySelectorAll('.content [translate]');
+            for (let i = 0; i < elements.length; i++) {
+                const element = elements[i];
+                const type = element.getAttribute('translate');
+                const current = crt[type];
+                if(current && element.innerHTML != current){
+                    element.innerHTML = current;
+                }
+            }
+        });
+    </script>
+</body>

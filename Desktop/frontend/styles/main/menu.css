@@ -1,0 +1,102 @@
+.menu{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    position: relative;
+    width: max(20vw, 200px);
+    min-width: max(20vw, 200px);
+    max-width: max(20vw, 200px);
+}
+.menu .header{
+    display: flex;
+    padding: 20px;
+    -webkit-app-region: drag;
+    user-select: none;
+}
+.menu .header i{
+    display: flex;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    margin-right: 10px;
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+}
+.menu .header i:hover{
+    border-radius: 35%;
+}
+.menu .header span{
+    display: flex;
+    font-family: NeonOL;
+    background-color: #35ff23;
+    background-image: linear-gradient(155deg, #35ff23, #45ffd1);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.menu .settings{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: calc(100% - 40px);
+    padding: 20px;
+}
+.menu .settings span{
+    font-size: 22px;
+    font-family: Nunito;
+    color: aliceblue;
+    width: 100%;
+    padding: 7px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+}
+.menu .settings span:hover{
+    background: #ffffff15;
+}
+
+.menu .selector{
+    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    direction: rtl;
+    margin-top: 10px;
+    margin-bottom: 85px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.menu .selector .server{
+    direction: ltr;
+    display: flex;
+    width: 100%;
+    min-height: 40px;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+.menu .selector .server span{
+    display: flex;
+    width: calc(100% - 60px);
+    color: #cdd4da;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.menu .selector .server span:hover{
+    background: #ffffff15;
+}
+.menu .selector .server text{
+    font-size: 20px;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    user-select: none;
+}

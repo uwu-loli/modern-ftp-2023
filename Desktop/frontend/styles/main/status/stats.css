@@ -1,0 +1,60 @@
+.content .status .stats{
+    border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    user-select: none;
+}
+.content .status .stats .stat{
+    height: 98px;
+    width: 98px;
+    padding: 4px;
+    background-color: #141417;
+    margin: 5px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.content .status .stats .stat .cont{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+.content .status .stats .stat .cont{
+    background: 
+    radial-gradient(closest-side, #141417 89%, transparent 90% 100%, #141417 0),
+    conic-gradient(#35cc49 calc(var(--percent, 0) * 1%), #283837 0);
+}
+.content .status .stats .stat .cont::before {
+    counter-reset: percent var(--percent, 0);
+    content: counter(percent) '%';
+}
+.content .status .stats .stat .cont.disk::before {
+    content: attr(stats-data);
+}
+.content .status .stats .stat .cont::after {
+    color: gray;
+    font-size: 14px;
+}
+.content .status .stats .stat .cont.cpu::after {
+    content: 'CPU';
+}
+.content .status .stats .stat .cont.ram::after {
+    content: 'RAM';
+}
+.content .status .stats .stat .cont.disk::after {
+    content: 'Disk';
+}

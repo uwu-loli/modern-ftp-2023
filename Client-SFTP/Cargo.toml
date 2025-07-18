@@ -1,0 +1,20 @@
+[package]
+name = "client_sftp"
+version = "0.1.0"
+edition = "2021"
+description = "SFTP Client for Modern File Transfer"
+license = "MIT"
+build = "build.rs"
+
+[dependencies]
+minreq = { version = "2.10.0", features = ["https"] }
+serde = { version = "1.0.178", features = ["derive"] }
+serde_json = "1.0.104"
+sha2 = "0.10.7"
+ssh2 = "0.9.4"
+time = "0.3.23"
+
+
+[build-dependencies]
+winres = "0.1"
+time = "0.3.23"

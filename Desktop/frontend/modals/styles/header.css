@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    overflow: hidden;
+    user-select: none;
+    color: aliceblue;
+    font-family: 'Nunito', sans-serif;
+}
+.header{
+    display: flex;
+    -webkit-app-region: drag;
+    user-select: none;
+    padding: 7px;
+    border-bottom: 1px solid aliceblue;
+}
+.header i{
+    display: flex;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    margin-right: 10px;
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+}
+.header i:hover{
+    border-radius: 35%;
+}
+.header span{
+    display: flex;
+    font-family: NeonOL;
+    background-color: #35ff23;
+    background-image: linear-gradient(155deg, #35ff23, #45ffd1);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    background-clip: text;
+}

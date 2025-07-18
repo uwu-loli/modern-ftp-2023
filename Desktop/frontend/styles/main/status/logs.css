@@ -1,0 +1,14 @@
+.content .status .info .logs{
+    height: 33%;
+    width: 100%;
+}
+.content .status .info .logs .area{
+    height: calc(100% - 20px);
+    margin: 10px;
+    margin-right: 0;
+    overflow-y: auto;
+}
+.content .status .info .logs span{
+    display: flex;
+    color: #5b6463;
+}

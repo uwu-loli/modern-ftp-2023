@@ -1,0 +1,56 @@
+@keyframes HeaderNewConnect {
+    from {transform:translateX(-100%)}
+    to {transform:translateX(0)}
+}
+@keyframes HeaderCloseConnect {
+    from {transform:translateX(0)}
+    to {transform:translateX(-100%)}
+}
+.content .header::-webkit-scrollbar{
+    height: 1px;
+}
+.content .header{
+    height: 70px;
+    width: calc(100vw - max(20vw, 200px) - 1px);
+    border-bottom: 1px solid black;
+    overflow-x: auto;
+    display: flex;
+}
+.content .header .connection{
+    border-top: 4px solid aliceblue;
+    border-right: 1px solid black;
+    min-width: 235px;
+    height: calc(100% - 4px);
+    background-color: #161515;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: HeaderNewConnect .5s;
+}
+.content .header .connection .status{
+    width: 10px;
+    height: 10px;
+    margin: auto 25px;
+    background-color: #818181;
+    border-radius: 50%;
+}
+.content .header .connection .close{
+    width: 20px;
+    height: 20px;
+    margin: auto 15px;
+    border-radius: 50%;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'MFTIcons', 'Nunito', sans-serif;
+    font-size: 11px;
+}
+.content .header .connection .close:hover{
+    background-color: #74747440;
+}
+.content .header .connection .name{
+    color: aliceblue;
+}

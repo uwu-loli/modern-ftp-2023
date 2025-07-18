@@ -1,0 +1,23 @@
+.content .files{
+    height: calc(calc(100vh - 70px) / 2);
+    width: calc(100vw - max(20vw, 200px) - 1px);
+    border-bottom: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.content .files .local{
+    border-right: 1px solid black;
+}
+
+.content .files .local,
+.content .files .remote{
+    width: calc(calc(100vw - max(20vw, 200px) - 1px) / 2 - 1px);
+    height: calc(calc(100vh - 70px) / 2);
+}
+.content .files .local .area .file{
+    grid-template-columns: 25px 5fr 2fr 160px;
+}
+.content .files .remote .area .file{
+    grid-template-columns: 25px 2fr 1.5fr min(max(12%, 40px), 85px) 2fr 160px;
+}

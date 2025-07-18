@@ -1,0 +1,17 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    background: #1c1c1c;
+    border-left: 1px solid black;
+    -webkit-app-region: no-drag;
+    position: relative;
+}
+.serverArea{
+    height: calc(100vh - 71px);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 71px;
+}

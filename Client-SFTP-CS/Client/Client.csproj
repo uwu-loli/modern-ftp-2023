@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <StartupObject>MFClient.Program</StartupObject>
+    <BaseOutputPath>..\Build\</BaseOutputPath>
+    <BaseIntermediateOutputPath>..\Build\obj\</BaseIntermediateOutputPath>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <SignAssembly>False</SignAssembly>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <AssemblyName>MFClientSFTP</AssemblyName>
+    <RootNamespace>MFClient</RootNamespace>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <PublishSingleFile>true</PublishSingleFile>
+    <ApplicationIcon>ftp2.ico</ApplicationIcon>
+    <Copyright>Copyright © fydne 2023</Copyright>
+    <Title>Modern SFTP Client</Title>
+    <Version>0.0.0.0</Version>
+    <Authors>fydne</Authors>
+    <Product>Modern SFTP Client</Product>
+    <Description>Modern client for SFTP connections</Description>
+    <PackageId>$(AssemblyName)</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>True</Optimize>
+    <WarningLevel>7</WarningLevel>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="ftp2.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SSH.NET" Version="2020.0.2" />
+  </ItemGroup>
+
+</Project>

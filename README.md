@@ -42,6 +42,12 @@
 
 ---
 
+## 🫰🏻Дизайн
+<img width="1497" height="839" alt="design_1" src="https://github.com/user-attachments/assets/a8fd4448-c688-4e19-98b8-67be866e515f" />
+<img width="1341" height="763" alt="design_2" src="https://github.com/user-attachments/assets/363f37f8-4832-48f5-bb3d-44fd82cf89db" />
+<img width="647" height="480" alt="design_3" src="https://github.com/user-attachments/assets/4d464560-9515-4d50-a3c8-8a6aa28334e1" />
+
+
 ## 🚀 Быстрый старт (GUI)
 
 ```bash
